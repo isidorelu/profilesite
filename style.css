@@ -1,133 +1,139 @@
-/* A set of default styles */
-:root {
-  /* Generic sizing for the page */
-  --wrapper-height: 100vh;
-
-  /* Fonts for different elements */
-  --font-family: sans-serif;
-  --font-family-list: monospace;
-
-  /* Colors you'll see cascade through the elements */
-  --color-bg: #99ddff; /* Used for the page body background */
-  --color-bg-alt: #33b1ff; /* Used for social icons on hover */
-  --color-text-main: #004099; /* List text ann social icons on hover */
-  --color-primary: #006aff; /* Headers and borders */
-  --color-highlight: #e7f7fe; /* Highlights */
-}
-
-/* Basic page style resets */
+/* Reset & Base Styles */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-[hidden] {
-  display: none !important;
+
+/* Globals */
+:root {
+  --red:    #ff0000;
+  --green:  #00cc00;
+  --yellow: #ffcc00;
+  --blue:   #0055ff;
+  --black:  #000000;
+  --gray:   #555555;
+  --white:  #ffffff;
+  --white-blur : rgba(255, 255, 255, 0.85);
+
+  /* Fonts */
+  --font-title: 'Oswald', sans-serif;
+  --font-header: 'Playfair Display', serif;
+  --font-body: 'Inter Tight', sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  /* Transition */
+  --fade: all 0.3s ease-in-out;
 }
 
-/* Page structure */
 body {
-  font-family: var(--font-family);
-  background-color: var(--color-bg);
-  text-align: center;
-  margin: 0;
-  font-size:large;
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  padding: var(--spacing-);
 }
-/* Page structure */
-.wrapper {
-  min-height: var(--wrapper-height);
-  display: grid;
-  place-items: center;
-  margin: 0;
-  padding:1rem 2rem;
-}
-.content {
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white-blur);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
 }
 
-.illustration {
-  max-width:30%;
-  margin:1rem 0 2rem 0;
-  animation: 1s ease-out 0s 1 spinIn;
-}
-@keyframes spinIn {
+@keyframes fadeInZoom {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: scale(0.95);
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-.illustration-404 {
-  max-width:30%;
-  margin:1rem 0 2rem 0;
-  animation: 1s ease-out 0s 1 spinUp;
-  filter: grayscale(100%);
-  animation-fill-mode: forwards;
-} 
-@keyframes spinUp {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* Typography */
-p {
-  margin: 1rem;
-  line-height: 1.3em;
+.modal.show {
+  animation: fadeInZoom 0.5s ease-out forwards;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--color-text-main);
+
+.modal-content {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
 }
-h1 {
-  display: inline-flex;
-  color: var(--color-primary);
-  justify-content: center;
+
+.modal-text {
+  font-size: 1.1rem;
+  color: var(--black);
+  margin-bottom: var(--spacing-md);
 }
-/* Link styles */
-a:link,
-a:visited {
-  text-decoration: none;
-  border-bottom: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  transition: background 0.2s linear;
+.text-red {
+  color: var(--red);
   font-weight: bold;
 }
-a:hover,
-a:active,
-a:focus {
-  background: var(--color-primary);
-  color:var(--color-highlight);
+
+.text-green {
+  color: var(--green);
+  font-weight: bold;
 }
-/* Navigation grid */
-.footer {
+
+.text-yellow {
+  color: var(--yellow);
+  font-weight: bold;
+}
+
+.text-blue {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.text-gray {
+  color: var(--gray);
+  font-weight: bold;
+}
+
+
+.modal-buttons {
   display: flex;
-  justify-content: space-between;
-  margin: 2rem auto 0;
-  padding: 1.5rem 0 0.5rem 0;
-  width: 100%;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: var(--spacing-md);
 }
-a.remix {
-  background: var(--color-bg-alt);
-  color:var(--color-highlight);
-  border: 2px solid var(--color-highlight);
-  border-radius: 5px;
-  padding:0.5rem;
-  font-weight:bold;
+
+.modal-buttons button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--fade);
 }
-a.remix:hover {
-  background: var(--color-primary);
-  color:var(--color-highlight);
+
+#yes-button {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+#no-button {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.hidden {
+  display: none;
 }

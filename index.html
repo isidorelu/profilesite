@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISIDORE LU</title>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="https://glitch.com/favicon.ico" />
+  <!-- Link Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Oswald:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-  <title>Hello World!</title>
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- The website stylesheet -->
-  <link rel="stylesheet" href="/style.css" />
-
-  <!-- The website JavaScript file -->
-  <script src="/script.js" defer></script>
 </head>
-
 <body>
-  <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-  <div class="wrapper">
-    <div class="content" role="main">
-      <h1 class="title">Oh hi website!</h1>
-      <img src="/cool-website.svg" class="illustration" alt="cool website" />
-      <div class="instructions">
-        <p>
-          Fork <a href="https://github.com/glitchdotcom/website-to-compute">this project</a> and open it in a GitHub Codespace.
-        </p>
-        <p> Follow the steps in the README to deploy your new website to Fastly in a few steps!
-        </p>
 
+  <!-- ENTRY MODAL -->
+  <div id="entry-modal" class="modal hidden">
+    <div class="modal-content">
+      <p class="modal-text">
+        <strong>ISIDORE LU</strong> is a 
+        <strong class="text-gray">pop musician</strong>, 
+        <strong class="text-gray">visual artist</strong>, & 
+        <strong class="text-gray">computer science student.</strong><br><br>Pursuing a 
+        <strong>B.S. in Music & Technology (Computer Science Focus)</strong> @ 
+        <strong>Carnegie Mellon</strong>.<br><br>
+        <strong>Are you a potential employer?</strong>
+      </p>
+
+
+      <div class="modal-buttons">
+        <button id="yes-button">YES</button>
+        <button id="no-button">NO</button>
       </div>
-
-      <footer class="footer">
-        <div>
-          <a class="remix" href="https://github.com/glitchdotcom/website-to-compute">🚧 Get your own site</a>
-        </div>
-      </footer>
     </div>
   </div>
-</body>
 
+  <!-- Site Content Placeholder -->
+  <main>
+    <h1>Welcome to ISIDORE LU's website!</h1>
+    <p>This is the start of something cool.</p>
+  </main>
+
+  <!-- JS Script -->
+  <script src="script.js"></script>
+</body>
 </html>
