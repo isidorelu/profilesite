@@ -1,3 +1,9 @@
+# ISIDORE LU Profile Site
+
+A personal interactive site showcasing pop + professional projects by Isidore Lu. Built using HTML, CSS, and JavaScript. Live at: [view site](https://your-username.github.io/your-repo-name/)
+
+
+
 # Your New Website 🤩
 
 Oh hi! Welcome to your new website. 🛼
