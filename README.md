@@ -1,6 +1,7 @@
 # ISIDORE LU Profile Site
 
-A personal interactive site showcasing pop + professional projects by Isidore Lu. Built using HTML, CSS, and JavaScript. Live at: [view site](https://isidorelu.github.io/profilesite/)
+A personal interactive site showcasing pop + professional projects by Isidore Lu. Built using HTML, CSS, and JavaScript.
+Live at: [view site](https://isidorelu.github.io/profilesite/)
 ![GitHub Pages](https://img.shields.io/github/deployments/isidorelu/profilesite/github-pages?label=deploy&logo=github)
 
 
